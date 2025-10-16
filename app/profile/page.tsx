@@ -104,7 +104,7 @@ export default function ProfilePage() {
                     <h3 className="text-lg font-semibold mb-4">Recent Activity</h3>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm">Minted "Digital Compass"</span>
+                        <span className="text-sm">Minted &quot;Digital Compass&quot;</span>
                         <span className="text-xs text-gray-400">2 hours ago</span>
                       </div>
                       <div className="flex justify-between items-center">
@@ -145,7 +145,7 @@ export default function ProfilePage() {
                   {mockNFTs.map(nft => (
                     <div key={nft.id} className="bg-white/5 rounded-lg p-4">
                       <div className="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
-                        <Image className="w-16 h-16 text-white/50" />
+                        <Image className="w-16 h-16 text-white/50" aria-label="NFT placeholder" />
                       </div>
                       <h3 className="font-semibold">{nft.name}</h3>
                       <p className="text-sm text-gray-400">Owned by you</p>

@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   webpack: (config) => {
     config.resolve.fallback = {
       fs: false,
@@ -10,6 +7,9 @@ const nextConfig = {
       tls: false,
     };
     return config;
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
   },
 }
 

@@ -163,11 +163,14 @@ export default function CreateNFTPage() {
               
               <div className="bg-white/5 rounded-lg p-6">
                 {preview ? (
-                  <img
-                    src={preview}
-                    alt="NFT Preview"
-                    className="w-full h-64 object-cover rounded-lg mb-4"
-                  />
+                  <div className="w-full h-64 rounded-lg mb-4 overflow-hidden">
+                    <div 
+                      style={{ backgroundImage: `url(${preview})` }}
+                      className="w-full h-full bg-cover bg-center"
+                      role="img"
+                      aria-label="NFT Preview"
+                    />
+                  </div>
                 ) : (
                   <div className="w-full h-64 bg-white/10 rounded-lg flex items-center justify-center mb-4">
                     <p className="text-gray-400">No image uploaded</p>
