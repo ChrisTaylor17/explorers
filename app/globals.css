@@ -10,25 +10,25 @@
   }
   
   body {
-    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900;
-    @apply text-white min-h-screen;
+    @apply bg-gradient-to-br from-black via-slate-900 to-black;
+    @apply text-gray-100 min-h-screen;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl;
+    @apply bg-slate-900/80 backdrop-blur-lg border border-orange-500/30 rounded-lg shadow-xl;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-orange-500 via-red-600 to-orange-400 bg-clip-text text-transparent;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105;
+    @apply bg-gradient-to-r from-orange-600 to-red-700 hover:from-orange-700 hover:to-red-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg;
   }
   
   .btn-secondary {
-    @apply bg-white/10 hover:bg-white/20 border border-white/30 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200;
+    @apply bg-slate-800 hover:bg-slate-700 border border-orange-500/50 text-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-200;
   }
 }

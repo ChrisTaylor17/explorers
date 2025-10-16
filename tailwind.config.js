@@ -9,18 +9,18 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
+          50: '#fff7ed',
+          500: '#f97316',
+          600: '#ea580c',
+          700: '#c2410c',
         },
         secondary: {
-          500: '#8b5cf6',
-          600: '#7c3aed',
+          500: '#dc2626',
+          600: '#b91c1c',
         },
         accent: {
-          500: '#06b6d4',
-          600: '#0891b2',
+          500: '#fbbf24',
+          600: '#f59e0b',
         }
       },
       fontFamily: {

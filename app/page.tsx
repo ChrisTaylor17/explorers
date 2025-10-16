@@ -16,18 +16,18 @@ export default function HomePage() {
           className="text-center"
         >
           <div className="flex justify-center mb-8">
-            <div className="glass-card p-4 rounded-full">
-              <Compass className="w-16 h-16 text-blue-400 animate-float" />
+            <div className="glass-card p-6 rounded-lg border-2 border-orange-500">
+              <Compass className="w-20 h-20 text-orange-500 animate-float" />
             </div>
           </div>
           
-          <h1 className="text-6xl font-bold mb-6">
-            <span className="gradient-text">Society of Explorers</span>
+          <h1 className="text-7xl font-black mb-6 tracking-tight">
+            <span className="gradient-text">SOCIETY OF EXPLORERS</span>
           </h1>
           
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Navigate the Web3 frontier. Create NFTs and tokens on Solana, connect with fellow explorers, 
-            and let our AI guide your blockchain journey.
+          <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-semibold">
+            Forge your path through the blockchain frontier. Build, earn, and conquer with AI-powered expeditions. 
+            Merit-based token rewards for every contribution.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -48,12 +48,12 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass-card p-8 text-center"
+            className="glass-card p-8 text-center hover:border-orange-500 transition-all"
           >
-            <Zap className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-semibold mb-4">Create NFTs & Tokens</h3>
-            <p className="text-gray-300">
-              Mint unique NFTs and create custom tokens on Solana with our intuitive interface.
+            <Zap className="w-14 h-14 text-orange-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-4 text-orange-400">FORGE ASSETS</h3>
+            <p className="text-gray-400 font-medium">
+              Mint battle-tested NFTs and tokens on Solana. Build your arsenal.
             </p>
           </motion.div>
 
@@ -61,12 +61,12 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="glass-card p-8 text-center"
+            className="glass-card p-8 text-center hover:border-orange-500 transition-all"
           >
-            <Users className="w-12 h-12 text-green-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-semibold mb-4">Connect & Chat</h3>
-            <p className="text-gray-300">
-              Join real-time conversations with other Web3 explorers and share your discoveries.
+            <Users className="w-14 h-14 text-red-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-4 text-red-400">UNITE FORCES</h3>
+            <p className="text-gray-400 font-medium">
+              Join expeditions with elite explorers. Collaborate, conquer, earn.
             </p>
           </motion.div>
 
@@ -74,12 +74,12 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="glass-card p-8 text-center"
+            className="glass-card p-8 text-center hover:border-orange-500 transition-all"
           >
-            <Bot className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-semibold mb-4">AI Guidance</h3>
-            <p className="text-gray-300">
-              Get personalized assistance from our AI explorer to navigate blockchain complexities.
+            <Compass className="w-14 h-14 text-yellow-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-4 text-yellow-400">EXPLORER NEXUS</h3>
+            <p className="text-gray-400 font-medium">
+              AI-powered merit system. Earn tokens for every contribution. Dominate the leaderboard.
             </p>
           </motion.div>
         </div>

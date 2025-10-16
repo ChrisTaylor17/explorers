@@ -24,10 +24,10 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
+            <div className="p-2 bg-gradient-to-r from-orange-600 to-red-700 rounded-lg border border-orange-500">
               <Compass className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold gradient-text">Society of Explorers</span>
+            <span className="text-xl font-black gradient-text tracking-tight">SOCIETY OF EXPLORERS</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,7 +41,7 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <WalletMultiButton className="!bg-gradient-to-r !from-blue-500 !to-purple-600 !rounded-lg" />
+            <WalletMultiButton className="!bg-gradient-to-r !from-orange-600 !to-red-700 !rounded-lg !font-bold !border !border-orange-500" />
           </div>
 
           {/* Mobile Menu Button */}
