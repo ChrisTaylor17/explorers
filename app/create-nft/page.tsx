@@ -46,11 +46,15 @@ export default function CreateNFTPage() {
     }
 
     setIsLoading(true)
-    // Mock minting process
-    setTimeout(() => {
-      alert('NFT minted successfully! (This is a demo)')
+    
+    try {
+      // Real NFT minting will be implemented here
+      alert('Connect to backend API for real minting')
+    } catch (error) {
+      alert('Minting failed: ' + error)
+    } finally {
       setIsLoading(false)
-    }, 2000)
+    }
   }
 
   return (

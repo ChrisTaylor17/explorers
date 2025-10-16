@@ -56,26 +56,37 @@ export function AIAssistant() {
     }
   }
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return
 
     const userMessage = { role: 'user', content: input }
     setMessages(prev => [...prev, userMessage])
+    setInput('')
 
     // Analyze and allocate tokens
     const allocation = analyzeContribution(input)
     const newTotal = Math.min(sessionTokens + allocation.tokens_awarded, 100)
     setSessionTokens(newTotal)
 
-    setTimeout(() => {
-      const response = { 
-        role: 'assistant', 
-        content: `🎯 ${allocation.reason}! Awarding **${allocation.tokens_awarded} tokens**. \n\nYour expedition progress: ${newTotal}/100 tokens this session.\n\nKeep pushing boundaries, Explorer. What's your next move?\n\n\`\`\`json\n${JSON.stringify(allocation, null, 2)}\n\`\`\`` 
-      }
-      setMessages(prev => [...prev, response])
-    }, 800)
+    try {
+      const response = await fetch('/api/ai/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: input,
+          allocation,
+          sessionTokens: newTotal
+        })
+      })
 
-    setInput('')
+      const data = await response.json()
+      setMessages(prev => [...prev, { role: 'assistant', content: data.response }])
+    } catch (error) {
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: '⚠️ Connection lost. Check your expedition logs and try again.' 
+      }])
+    }
   }
 
   return (

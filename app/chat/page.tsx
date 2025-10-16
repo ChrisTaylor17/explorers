@@ -13,14 +13,10 @@ interface Message {
 }
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>([
-    { id: '1', user: 'Explorer_Alice', content: 'Just minted my first NFT! 🚀', timestamp: new Date(), room: 'general' },
-    { id: '2', user: 'CryptoVoyager', content: 'Welcome to the society! What did you create?', timestamp: new Date(), room: 'general' },
-    { id: '3', user: 'Explorer_Alice', content: 'A digital compass that points to new opportunities!', timestamp: new Date(), room: 'general' }
-  ])
+  const [messages, setMessages] = useState<Message[]>([])
   const [newMessage, setNewMessage] = useState('')
   const [activeRoom, setActiveRoom] = useState('general')
-  const [onlineUsers] = useState(['Explorer_Alice', 'CryptoVoyager', 'BlockchainBob', 'NFTNinja'])
+  const [onlineUsers] = useState<string[]>([])
 
   const rooms = [
     { id: 'general', name: 'General', icon: Hash },
@@ -42,24 +38,6 @@ export default function ChatPage() {
 
     setMessages(prev => [...prev, message])
     setNewMessage('')
-
-    // Mock response
-    setTimeout(() => {
-      const responses = [
-        'That sounds amazing!',
-        'Great work on your project!',
-        'I\'d love to see that!',
-        'The community is growing fast!'
-      ]
-      const response: Message = {
-        id: (Date.now() + 1).toString(),
-        user: 'Explorer_' + Math.floor(Math.random() * 100),
-        content: responses[Math.floor(Math.random() * responses.length)],
-        timestamp: new Date(),
-        room: activeRoom
-      }
-      setMessages(prev => [...prev, response])
-    }, 1000)
   }
 
   const filteredMessages = messages.filter(msg => msg.room === activeRoom)

@@ -25,11 +25,15 @@ export default function CreateTokenPage() {
     }
 
     setIsLoading(true)
-    // Mock token creation
-    setTimeout(() => {
-      alert('Token created successfully! (This is a demo)')
+    
+    try {
+      // Real token creation will be implemented here
+      alert('Connect to backend API for real token creation')
+    } catch (error) {
+      alert('Token creation failed: ' + error)
+    } finally {
       setIsLoading(false)
-    }, 2000)
+    }
   }
 
   return (

@@ -9,16 +9,8 @@ export default function ProfilePage() {
   const { connected, publicKey } = useWallet()
   const [activeTab, setActiveTab] = useState('overview')
 
-  const mockNFTs = [
-    { id: 1, name: 'Digital Compass', image: '/api/placeholder/200/200' },
-    { id: 2, name: 'Explorer Badge', image: '/api/placeholder/200/200' },
-    { id: 3, name: 'Treasure Map', image: '/api/placeholder/200/200' }
-  ]
-
-  const mockTokens = [
-    { symbol: 'EXP', name: 'Explorer Coin', balance: '1,000,000', value: '$2,500' },
-    { symbol: 'ADV', name: 'Adventure Token', balance: '500,000', value: '$1,200' }
-  ]
+  const [nfts, setNfts] = useState<any[]>([])
+  const [tokens, setTokens] = useState<any[]>([])
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: User },
@@ -60,16 +52,16 @@ export default function ProfilePage() {
                 </p>
                 <div className="flex items-center space-x-4 mt-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-400">3</div>
+                    <div className="text-2xl font-bold text-orange-400">{nfts.length}</div>
                     <div className="text-sm text-gray-400">NFTs</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">2</div>
+                    <div className="text-2xl font-bold text-red-400">{tokens.length}</div>
                     <div className="text-sm text-gray-400">Tokens</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-400">$3,700</div>
-                    <div className="text-sm text-gray-400">Portfolio</div>
+                    <div className="text-2xl font-bold text-yellow-400">0</div>
+                    <div className="text-sm text-gray-400">Expeditions</div>
                   </div>
                 </div>
               </div>
@@ -102,19 +94,8 @@ export default function ProfilePage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-white/5 rounded-lg p-6">
                     <h3 className="text-lg font-semibold mb-4">Recent Activity</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Minted &quot;Digital Compass&quot;</span>
-                        <span className="text-xs text-gray-400">2 hours ago</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Created EXP Token</span>
-                        <span className="text-xs text-gray-400">1 day ago</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Joined chat room</span>
-                        <span className="text-xs text-gray-400">3 days ago</span>
-                      </div>
+                    <div className="text-center text-gray-500 py-4">
+                      No activity yet. Start your expedition!
                     </div>
                   </div>
                   <div className="bg-white/5 rounded-lg p-6">
@@ -142,7 +123,9 @@ export default function ProfilePage() {
               <div>
                 <h2 className="text-2xl font-semibold mb-6">My NFTs</h2>
                 <div className="grid md:grid-cols-3 gap-6">
-                  {mockNFTs.map(nft => (
+                  {nfts.length === 0 ? (
+                    <div className="col-span-3 text-center text-gray-500 py-8">No NFTs yet. Start creating!</div>
+                  ) : nfts.map(nft => (
                     <div key={nft.id} className="bg-white/5 rounded-lg p-4">
                       <div className="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
                         <Image className="w-16 h-16 text-white/50" aria-label="NFT placeholder" />
@@ -159,7 +142,9 @@ export default function ProfilePage() {
               <div>
                 <h2 className="text-2xl font-semibold mb-6">My Tokens</h2>
                 <div className="space-y-4">
-                  {mockTokens.map(token => (
+                  {tokens.length === 0 ? (
+                    <div className="text-center text-gray-500 py-8">No tokens yet. Start creating!</div>
+                  ) : tokens.map(token => (
                     <div key={token.symbol} className="bg-white/5 rounded-lg p-6 flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
